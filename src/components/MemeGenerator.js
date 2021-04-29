@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
-export default class MemeGenerator extends Component {
+class MemeGenerator extends Component {
+
+    constructor() {
+        super()
+        this.state = {}
+    }
+
     render() {
         return (
             <div>
@@ -9,3 +15,5 @@ export default class MemeGenerator extends Component {
         )
     }
 }
+
+export default MemeGenerator

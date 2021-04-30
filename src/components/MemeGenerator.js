@@ -1,19 +1,17 @@
 import React, { Component } from "react"
 
 class MemeGenerator extends Component {
-  constructor() {
-    super()
-    this.state = {
+  
+    state = {
       topText: "",
       bottomText: "",
       randomImg: "http://i.imgflip.com/1bij.jpg",
       allMemeImgs: []
     }
-    this.inputChangeHandler = this.inputChangeHandler.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+    
+  
 
-  componentDidMount() {
+  componentDidMount = () => {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
       .then((response) => {
@@ -22,12 +20,12 @@ class MemeGenerator extends Component {
       });
   }
 
-  inputChangeHandler(event) {
+  inputChangeHandler = (event) => {
       const { name, value } = event.target
       this.setState({[name]: value})
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault()
     const multiplier = this.state.allMemeImgs.length + 1
     const random = Math.floor(Math.random() * multiplier)

@@ -9,8 +9,6 @@ class MemeGenerator extends Component {
       allMemeImgs: []
     }
     
-  
-
   componentDidMount = () => {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
